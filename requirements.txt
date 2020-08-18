@@ -1,0 +1,14 @@
+aio-pika==6.6.1
+aiohttp==3.6.2
+aiormq==3.2.3
+async-timeout==3.0.1
+attrs==19.3.0
+chardet==3.0.4
+idna==2.10
+multidict==4.7.6
+pamqp==2.3.0
+telepot==12.7
+ujson==3.1.0
+urllib3==1.25.10
+uvloop==0.14.0
+yarl==1.5.1

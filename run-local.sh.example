@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Forwarder
+export FORWARDER="telegram"
+
+# Telegram
+export TELEGRAM_TOKEN=""
+export TELEGRAM_CHAT_ID=""
+
+# RabbitMQ
+export AMQP_CONN_STRING=""
+export AMQP_QUEUE=""
+
+. env/bin/activate
+python app.py
