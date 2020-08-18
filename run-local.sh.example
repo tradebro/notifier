@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-# Forwarder
-export FORWARDER="telegram"
-
 # Telegram
 export TELEGRAM_TOKEN=""
 export TELEGRAM_CHAT_ID=""
