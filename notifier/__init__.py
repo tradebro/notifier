@@ -8,6 +8,7 @@ import telepot
 
 AMQP_CONN_STRING = environ.get('AMQP_CONN_STRING')
 AMQP_QUEUE = environ.get('AMQP_QUEUE')
+AMQP_ORDERS_EXCHANGE = environ.get('AMQP_ORDERS_EXCHANGE')
 TELEGRAM_TOKEN = environ.get('TELEGRAM_TOKEN')
 TELEGRAM_CHAT_ID = environ.get('TELEGRAM_CHAT_ID')
 
@@ -105,7 +106,10 @@ async def main(aio_loop) -> aio_pika.Connection:
     channel = await conn.channel()
     queue = await channel.declare_queue(name=AMQP_QUEUE,
                                         auto_delete=True)
+    exchange = await channel.declare_exchange(name=AMQP_ORDERS_EXCHANGE,
+                                              type=aio_pika.ExchangeType.FANOUT)
 
+    await queue.bind(exchange)
     await queue.consume(process_message)
 
     return conn

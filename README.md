@@ -10,3 +10,4 @@ Subscribes to a queue and send notifications for buy or sell orders.
 | `TELEGRAM_CHAT_ID` | Required string |
 | `AMQP_CONN_STRING` | Required string |
 | `AMQP_QUEUE` | Required string, also known as routing key |
+| `AMQP_ORDERS_EXCHANGE` | Required string |
